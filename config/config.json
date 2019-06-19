@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "root",
+    "password": "Fafa.1372",
+    "database": "project_2",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "test": {
+    "username": "root",
+    "password": "Fafa.1372",
+    "database": "project_2",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "yirkgcbbgbujz1na",
+    "password": "iddfr1w9aqiyo9gn",
+    "database": "gq3uf0g1s6pdtnm1",
+    "host": "u0zbt18wwjva9e0v.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  }
+}
