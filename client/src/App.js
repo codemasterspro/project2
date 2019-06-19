@@ -1,8 +1,8 @@
 import React from "react";
-import Form from "./components/Form";
+import PrimarySearchAppBar from "./components/navbar";
 
 function App() {
-  return <Form />;
+  return <PrimarySearchAppBar />;
 }
 
 export default App;
