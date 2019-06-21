@@ -19,7 +19,7 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 const useStyles = makeStyles(theme => ({
   card: {
-    maxWidth: 345,
+    maxWidth: 240,
   },
   media: {
     height: 0,
@@ -70,20 +70,24 @@ const RecipeReviewCard = props => {
         image={props.albumCover}
         title={props.songTitle}
       />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
+      {/* <CardContent> */}
+      {/* <Typography variant="body2" color="textSecondary" component="p">
           This impressive paella is a perfect party dish and a fun meal to cook together with your
           guests. Add 1 cup of frozen peas along with the mussels, if you like.
-        </Typography>
-      </CardContent>
+        </Typography> */}
+      {/* </CardContent> */}
       <CardActions disableSpacing>
         <IconButton aria-label="Add to favorites">
           <FavoriteIcon />
         </IconButton>
+
         <IconButton aria-label="Share">
           <ShareIcon />
         </IconButton>
-        <IconButton
+
+        {/* Expandable Icon */}
+
+        {/* <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,
           })}
@@ -92,10 +96,14 @@ const RecipeReviewCard = props => {
           aria-label="Show more"
         >
           <ExpandMoreIcon />
-        </IconButton>
+        </IconButton> */}
+
       </CardActions>
+
+      {/* Expandable Description */}
+
       <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
+        {/* <CardContent>
           <Typography paragraph>Method:</Typography>
           <Typography paragraph>
             Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10
@@ -119,7 +127,7 @@ const RecipeReviewCard = props => {
           <Typography>
             Set aside off of the heat to let rest for 10 minutes, and then serve.
           </Typography>
-        </CardContent>
+        </CardContent> */}
       </Collapse>
     </Card>
   );
