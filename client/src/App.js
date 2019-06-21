@@ -17,7 +17,7 @@ class App extends Component {
 
   componentDidMount() {
 
-    fetch("https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=Kygo&index=0&limit=10")
+    fetch("https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=Nervo&index=0&limit=10")
       .then(response => response.json())
       .then(responsejson => {
         this.setState({

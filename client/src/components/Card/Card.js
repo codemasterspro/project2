@@ -16,6 +16,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
+import Container from "@material-ui/core/Container";
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -50,44 +51,45 @@ const RecipeReviewCard = props => {
   }
 
   return (
-    <Card className={classes.card}>
-      <CardHeader
-        avatar={
-          <Avatar aria-label="Recipe" className={classes.avatar}>
-            <img alt={props.artistName} src={props.artistImage} />
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="Settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title={props.songTitle}
-        subheader={props.artistName}
-      />
-      <CardMedia
-        className={classes.media}
-        image={props.albumCover}
-        title={props.songTitle}
-      />
-      {/* <CardContent> */}
-      {/* <Typography variant="body2" color="textSecondary" component="p">
+    <Container >
+      <Card className={classes.card}>
+        <CardHeader
+          avatar={
+            <Avatar aria-label="Recipe" className={classes.avatar}>
+              <img alt={props.artistName} src={props.artistImage} />
+            </Avatar>
+          }
+          action={
+            <IconButton aria-label="Settings">
+              <MoreVertIcon />
+            </IconButton>
+          }
+          title={props.songTitle}
+          subheader={props.artistName}
+        />
+        <CardMedia
+          className={classes.media}
+          image={props.albumCover}
+          title={props.songTitle}
+        />
+        {/* <CardContent> */}
+        {/* <Typography variant="body2" color="textSecondary" component="p">
           This impressive paella is a perfect party dish and a fun meal to cook together with your
           guests. Add 1 cup of frozen peas along with the mussels, if you like.
         </Typography> */}
-      {/* </CardContent> */}
-      <CardActions disableSpacing>
-        <IconButton aria-label="Add to favorites">
-          <FavoriteIcon />
-        </IconButton>
+        {/* </CardContent> */}
+        <CardActions disableSpacing>
+          <IconButton aria-label="Add to favorites">
+            <FavoriteIcon />
+          </IconButton>
 
-        <IconButton aria-label="Share">
-          <ShareIcon />
-        </IconButton>
+          <IconButton aria-label="Share">
+            <ShareIcon />
+          </IconButton>
 
-        {/* Expandable Icon */}
+          {/* Expandable Icon */}
 
-        {/* <IconButton
+          {/* <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,
           })}
@@ -98,12 +100,12 @@ const RecipeReviewCard = props => {
           <ExpandMoreIcon />
         </IconButton> */}
 
-      </CardActions>
+        </CardActions>
 
-      {/* Expandable Description */}
+        {/* Expandable Description */}
 
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        {/* <CardContent>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          {/* <CardContent>
           <Typography paragraph>Method:</Typography>
           <Typography paragraph>
             Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10
@@ -128,8 +130,9 @@ const RecipeReviewCard = props => {
             Set aside off of the heat to let rest for 10 minutes, and then serve.
           </Typography>
         </CardContent> */}
-      </Collapse>
-    </Card>
+        </Collapse>
+      </Card>
+    </Container>
   );
 };
 
