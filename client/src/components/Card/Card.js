@@ -1,5 +1,5 @@
-import "./Card.css";
 import React from 'react';
+import "./Card.css";
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -40,7 +40,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function RecipeReviewCard() {
+const RecipeReviewCard = props => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -53,7 +53,7 @@ export default function RecipeReviewCard() {
       <CardHeader
         avatar={
           <Avatar aria-label="Recipe" className={classes.avatar}>
-            R
+            <img alt={props.artistName} src={props.artistImage} />
           </Avatar>
         }
         action={
@@ -61,13 +61,13 @@ export default function RecipeReviewCard() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title={props.songTitle}
+        subheader={props.albumTitle}
       />
       <CardMedia
         className={classes.media}
-        image="/static/images/cards/paella.jpg"
-        title="Paella dish"
+        image={props.albumCover}
+        title={props.songTitle}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
@@ -123,3 +123,5 @@ export default function RecipeReviewCard() {
     </Card>
   );
 }
+
+export default RecipeReviewCard
