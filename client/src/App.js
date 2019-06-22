@@ -39,33 +39,15 @@ class App extends Component {
 
         {this.state.cards.map(card => {
 
-          let artistImage;
-          let artistName;
-          let albumCover;
-          let songTitle;
-          let id;
-          let songPreview;
-
-          // Remove if/else statement when local JSON structure is fixed
-
-          if (card.artist) {
-            id = card.id;
-            artistImage = card.artist.picture_small;
-            artistName = card.artist.name;
-            songTitle = card.title;
-            albumCover = card.album.cover_xl;
-            songPreview = card.preview;
-          } else {
-            id = card.id;
-            artistImage = card.artistPicture;
-            artistName = card.artistName;
-            songTitle = card.title;
-            albumCover = card.albumCover;
-            songPreview = card.songPreview;
-          }
+          let artistImage = card.artist.picture_small;
+          let artistName = card.artist.name;
+          let albumCover = card.album.cover_xl;
+          let songTitle = card.title;
+          let id = card.id;
+          let songPreview = card.preview;
 
           return <RecipeReviewCard
-            id={id}
+            ids={id}
             artistImage={artistImage}
             artistName={artistName}
             songTitle={songTitle}
