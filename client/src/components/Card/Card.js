@@ -23,7 +23,8 @@ import Sound from "react-sound";
 
 const useStyles = makeStyles(theme => ({
   card: {
-    maxWidth: 240,
+    width: 375,
+    maxWidth: 375
   },
   media: {
     height: 0,
@@ -65,7 +66,7 @@ const RecipeReviewCard = props => {
 
   return (
     <Container >
-      <Card className={classes.card}>
+      <Card className={classes.card} id="card">
         <CardHeader
           avatar={
             <Avatar aria-label="Recipe" className={classes.avatar}>
