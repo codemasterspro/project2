@@ -153,7 +153,7 @@ export default function PrimarySearchAppBar() {
               <SearchIcon />
             </div>
             <InputBase
-              placeholder="Search…"
+              placeholder="Search songs or artists..."
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,

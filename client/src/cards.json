@@ -1,7 +1,7 @@
 [
     {
         "id": 0,
-        "title": "Wake Me Up",
+        "title": "Hello",
         "artistName": "Avicii",
         "albumName": "True",
         "artistPicture": "https://e-cdns-images.dzcdn.net/images/artist/82e214b0cb39316f4a12a082fded54f6/56x56-000000-80-0-0.jpg",
@@ -37,70 +37,6 @@
     },
     {
         "id": 5,
-        "title": "Wake Me Up",
-        "artistName": "Avicii",
-        "albumName": "True",
-        "artistPicture": "https://e-cdns-images.dzcdn.net/images/artist/82e214b0cb39316f4a12a082fded54f6/56x56-000000-80-0-0.jpg",
-        "albumCover": "https://e-cdns-images.dzcdn.net/images/cover/ec97306735b46ec334e0ce562290775b/250x250-000000-80-0-0.jpg",
-        "songPreview": "https://cdns-preview-9.dzcdn.net/stream/c-9ab2ab24219594a5c8009df906fba81e-7.mp3"
-    },
-    {
-        "id": 6,
-        "title": "Wake Me Up",
-        "artistName": "Avicii",
-        "albumName": "True",
-        "artistPicture": "https://e-cdns-images.dzcdn.net/images/artist/82e214b0cb39316f4a12a082fded54f6/56x56-000000-80-0-0.jpg",
-        "albumCover": "https://e-cdns-images.dzcdn.net/images/cover/ec97306735b46ec334e0ce562290775b/250x250-000000-80-0-0.jpg",
-        "songPreview": "https://cdns-preview-9.dzcdn.net/stream/c-9ab2ab24219594a5c8009df906fba81e-7.mp3"
-    },
-    {
-        "id": 7,
-        "name": "SSJ3 Goku",
-        "title": "Wake Me Up",
-        "artistName": "Avicii",
-        "albumName": "True",
-        "artistPicture": "https://e-cdns-images.dzcdn.net/images/artist/82e214b0cb39316f4a12a082fded54f6/56x56-000000-80-0-0.jpg",
-        "albumCover": "https://e-cdns-images.dzcdn.net/images/cover/ec97306735b46ec334e0ce562290775b/250x250-000000-80-0-0.jpg",
-        "songPreview": "https://cdns-preview-9.dzcdn.net/stream/c-9ab2ab24219594a5c8009df906fba81e-7.mp3"
-    },
-    {
-        "id": 8,
-        "title": "Wake Me Up",
-        "artistName": "Avicii",
-        "albumName": "True",
-        "artistPicture": "https://e-cdns-images.dzcdn.net/images/artist/82e214b0cb39316f4a12a082fded54f6/56x56-000000-80-0-0.jpg",
-        "albumCover": "https://e-cdns-images.dzcdn.net/images/cover/ec97306735b46ec334e0ce562290775b/250x250-000000-80-0-0.jpg",
-        "songPreview": "https://cdns-preview-9.dzcdn.net/stream/c-9ab2ab24219594a5c8009df906fba81e-7.mp3"
-    },
-    {
-        "id": 9,
-        "title": "Wake Me Up",
-        "artistName": "Avicii",
-        "albumName": "True",
-        "artistPicture": "https://e-cdns-images.dzcdn.net/images/artist/82e214b0cb39316f4a12a082fded54f6/56x56-000000-80-0-0.jpg",
-        "albumCover": "https://e-cdns-images.dzcdn.net/images/cover/ec97306735b46ec334e0ce562290775b/250x250-000000-80-0-0.jpg",
-        "songPreview": "https://cdns-preview-9.dzcdn.net/stream/c-9ab2ab24219594a5c8009df906fba81e-7.mp3"
-    },
-    {
-        "id": 10,
-        "title": "Wake Me Up",
-        "artistName": "Avicii",
-        "albumName": "True",
-        "artistPicture": "https://e-cdns-images.dzcdn.net/images/artist/82e214b0cb39316f4a12a082fded54f6/56x56-000000-80-0-0.jpg",
-        "albumCover": "https://e-cdns-images.dzcdn.net/images/cover/ec97306735b46ec334e0ce562290775b/250x250-000000-80-0-0.jpg",
-        "songPreview": "https://cdns-preview-9.dzcdn.net/stream/c-9ab2ab24219594a5c8009df906fba81e-7.mp3"
-    },
-    {
-        "id": 11,
-        "title": "Wake Me Up",
-        "artistName": "Avicii",
-        "albumName": "True",
-        "artistPicture": "https://e-cdns-images.dzcdn.net/images/artist/82e214b0cb39316f4a12a082fded54f6/56x56-000000-80-0-0.jpg",
-        "albumCover": "https://e-cdns-images.dzcdn.net/images/cover/ec97306735b46ec334e0ce562290775b/250x250-000000-80-0-0.jpg",
-        "songPreview": "https://cdns-preview-9.dzcdn.net/stream/c-9ab2ab24219594a5c8009df906fba81e-7.mp3"
-    },
-    {
-        "id": 12,
         "title": "Wake Me Up",
         "artistName": "Avicii",
         "albumName": "True",
