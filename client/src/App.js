@@ -19,6 +19,9 @@ render() {
           songTitle={card.title}
           albumTitle={card.albumName}
           albumCover={card.albumCover}
+          genre={card.genres}
+          year={card.releaseYear}
+          songPreview={card.songPreview}
           />))}
       </div>
   );
