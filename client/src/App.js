@@ -44,6 +44,7 @@ class App extends Component {
           let albumCover;
           let songTitle;
           let id;
+          let songPreview;
 
           // Remove if/else statement when local JSON structure is fixed
 
@@ -53,12 +54,14 @@ class App extends Component {
             artistName = card.artist.name;
             songTitle = card.title;
             albumCover = card.album.cover_xl;
+            songPreview = card.preview;
           } else {
             id = card.id;
             artistImage = card.artistPicture;
             artistName = card.artistName;
             songTitle = card.title;
             albumCover = card.albumCover;
+            songPreview = card.songPreview;
           }
 
           return <RecipeReviewCard
@@ -67,6 +70,7 @@ class App extends Component {
             artistName={artistName}
             songTitle={songTitle}
             albumCover={albumCover}
+            songPreview={songPreview}
           />;
         })}
       </div>

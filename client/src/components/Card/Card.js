@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Card.css";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
@@ -17,6 +17,9 @@ import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Container from "@material-ui/core/Container";
+import PauseIcon from "@material-ui/icons/Pause";
+import PlayIcon from "@material-ui/icons/PlayArrow";
+import Sound from "react-sound";
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -46,6 +49,16 @@ const RecipeReviewCard = props => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
+  const [playing, setPlaying] = useState(Sound.status.PAUSED);
+
+  const playAudio = () => {
+    setPlaying(Sound.status.PLAYING);
+  };
+  const pauseAudio = () => {
+    setPlaying(Sound.status.PAUSED);
+
+  };
+
   function handleExpandClick() {
     setExpanded(!expanded);
   }
@@ -59,11 +72,11 @@ const RecipeReviewCard = props => {
               <img alt={props.artistName} src={props.artistImage} />
             </Avatar>
           }
-          action={
-            <IconButton aria-label="Settings">
-              <MoreVertIcon />
-            </IconButton>
-          }
+          // action={
+          //   <IconButton aria-label="Settings">
+          //     <MoreVertIcon />
+          //   </IconButton>
+          // }
           title={props.songTitle}
           subheader={props.artistName}
         />
@@ -79,13 +92,22 @@ const RecipeReviewCard = props => {
         </Typography> */}
         {/* </CardContent> */}
         <CardActions disableSpacing>
+
+          <IconButton aria-label="Play">
+            <PlayIcon onClick={playAudio} />
+          </IconButton>
+
+          <IconButton aria-label="Pause">
+            <PauseIcon onClick={pauseAudio} />
+          </IconButton>
+
           <IconButton aria-label="Add to favorites">
             <FavoriteIcon />
           </IconButton>
 
-          <IconButton aria-label="Share">
+          {/* <IconButton aria-label="Share">
             <ShareIcon />
-          </IconButton>
+          </IconButton> */}
 
           {/* Expandable Icon */}
 
@@ -101,6 +123,11 @@ const RecipeReviewCard = props => {
         </IconButton> */}
 
         </CardActions>
+
+        <Sound
+          url={props.songPreview}
+          playStatus={playing}
+        />
 
         {/* Expandable Description */}
 
@@ -131,8 +158,8 @@ const RecipeReviewCard = props => {
           </Typography>
         </CardContent> */}
         </Collapse>
-      </Card>
-    </Container>
+      </Card >
+    </Container >
   );
 };
 
