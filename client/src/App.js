@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import PrimarySearchAppBar from "./components/navbar";
 import RecipeReviewCard from "./components/Card";
 import cards from "./cards.json";
+import Wrapper from "./components/Wrapper";
+
 
 // -------- //
 
@@ -30,33 +32,26 @@ class App extends Component {
 
   render() {
     return (
-
-      <div>
+      <React.Fragment>
         <PrimarySearchAppBar />
         <br />
+        <div id="cardContainer">
 
-        {/* TO-DO: Update local JSON structure to match API response JSON structure */}
-
-        {this.state.cards.map(card => {
-
-          let artistImage = card.artist.picture_small;
-          let artistName = card.artist.name;
-          let albumCover = card.album.cover_xl;
-          let songTitle = card.title;
-          let id = card.id;
-          let songPreview = card.preview;
-
-          return <RecipeReviewCard
-            ids={id}
-            artistImage={artistImage}
-            artistName={artistName}
-            songTitle={songTitle}
-            albumCover={albumCover}
-            songPreview={songPreview}
-          />;
-        })}
-      </div>
-
+          {this.state.cards.map(card => {
+            return (
+              <RecipeReviewCard
+                id={card.id}
+                artistImage={card.artist.picture_small}
+                artistName={card.artist.name}
+                songTitle={card.title}
+                albumCover={card.album.cover_xl}
+                songPreview={card.preview}
+              />  
+            )
+                    
+          })}
+         </div> 
+      </React.Fragment>
     );
   }
 }
