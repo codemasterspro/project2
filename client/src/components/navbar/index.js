@@ -10,7 +10,6 @@ import Menu from "@material-ui/core/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 
-
 const useStyles = makeStyles(theme => ({
   grow: {
     flexGrow: 1,
@@ -73,7 +72,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function PrimarySearchAppBar() {
+export default function PrimarySearchAppBar(props) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -82,7 +81,6 @@ export default function PrimarySearchAppBar() {
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
  
-
   function handleProfileMenuOpen(event) {
     setAnchorEl(event.currentTarget);
   }
@@ -95,7 +93,6 @@ export default function PrimarySearchAppBar() {
     setAnchorEl(null);
     handleMobileMenuClose();
   }
-
 
   const menuId = "primary-search-account-menu";
   const renderMenu = (
@@ -124,9 +121,6 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-     
-     
-      
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           aria-label="Account of current user"
@@ -159,11 +153,11 @@ export default function PrimarySearchAppBar() {
                 input: classes.inputInput,
               }}
               inputProps={{ "aria-label": "Search" }}
+              onChange={e => props.getData(e.target.value)}
             />
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-          
             <IconButton
               edge="end"
               aria-label="Account of current user"
@@ -175,8 +169,7 @@ export default function PrimarySearchAppBar() {
               <AccountCircle />
             </IconButton>
           </div>
-          <div className={classes.sectionMobile}>
-          </div>
+          <div className={classes.sectionMobile} />
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
