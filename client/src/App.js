@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PrimarySearchAppBar from "./components/navbar";
 import RecipeReviewCard from "./components/Card";
 import cards from "./cards.json";
+import Container from "@material-ui/core/Container";
 
 // -------- //
 
@@ -54,6 +55,12 @@ class App extends Component {
       <React.Fragment >
         <PrimarySearchAppBar getData={this.getData} />
         <br />
+
+        <Container>
+          <h6>Top Results</h6>
+          <p>The latest hits, updated all the time</p>
+        </Container>
+
         <div id="cardContainer">
 
           {cards ? cards.map(card => {
