@@ -23,8 +23,11 @@ import Sound from "react-sound";
 
 const useStyles = makeStyles(theme => ({
   card: {
-    width: 375,
-    maxWidth: 375
+    width: 300,
+    maxWidth: 375,
+    marginTop: 10,
+    marginBottom: 20,
+    marginRight: 0
   },
   media: {
     height: 0,
