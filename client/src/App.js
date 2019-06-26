@@ -17,6 +17,7 @@ class App extends Component {
     //console.log(data);
     this.setState({ data });
   };
+  
   // Deezer API Call //
   // Need to capture user's search input here and pass to API paramaters //
 

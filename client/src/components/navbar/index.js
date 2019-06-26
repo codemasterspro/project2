@@ -144,7 +144,7 @@ export default function PrimarySearchAppBar(props) {
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <div>
-        <MenuItem onClick={handleOpen}>Signup</MenuItem>
+        <MenuItem onClick={handleOpen}>Sign up</MenuItem>
         <Modal
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
