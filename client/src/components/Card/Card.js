@@ -20,6 +20,16 @@ import Container from "@material-ui/core/Container";
 import PauseIcon from "@material-ui/icons/Pause";
 import PlayIcon from "@material-ui/icons/PlayArrow";
 import Sound from "react-sound";
+import PropTypes from "prop-types";
+import Button from "@material-ui/core/Button";
+import CheckCircleIcon from "@material-ui/icons/CheckCircle";
+import ErrorIcon from "@material-ui/icons/Error";
+import InfoIcon from "@material-ui/icons/Info";
+import CloseIcon from "@material-ui/icons/Close";
+import { amber, green } from "@material-ui/core/colors";
+import Snackbar from "@material-ui/core/Snackbar";
+import SnackbarContent from "@material-ui/core/SnackbarContent";
+import WarningIcon from "@material-ui/icons/Warning";
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -31,23 +41,90 @@ const useStyles = makeStyles(theme => ({
   },
   media: {
     height: 0,
-    paddingTop: "56.25%", // 16:9
+    paddingTop: "56.25%" // 16:9
   },
   expand: {
     transform: "rotate(0deg)",
     marginLeft: "auto",
     transition: theme.transitions.create("transform", {
-      duration: theme.transitions.duration.shortest,
-    }),
+      duration: theme.transitions.duration.shortest
+    })
   },
   expandOpen: {
-    transform: "rotate(180deg)",
+    transform: "rotate(180deg)"
   },
   avatar: {
-    backgroundColor: red[500],
+    backgroundColor: red[500]
+  }
+}));
+
+const variantIcon = {
+  success: CheckCircleIcon
+};
+
+const useStyles1 = makeStyles(theme => ({
+  success: {
+    backgroundColor: green[600],
+  },
+  error: {
+    backgroundColor: theme.palette.error.dark,
+  },
+  info: {
+    backgroundColor: theme.palette.primary.main,
+  },
+  warning: {
+    backgroundColor: amber[700],
+  },
+  icon: {
+    fontSize: 20,
+  },
+  iconVariant: {
+    opacity: 0.9,
+    marginRight: theme.spacing(1),
+  },
+  message: {
+    display: "flex",
+    alignItems: "center",
   },
 }));
 
+function MySnackbarContentWrapper(props) {
+  const classes = useStyles1();
+  const { className, message, onClose, variant, ...other } = props;
+  const Icon = variantIcon[variant];
+
+  return (
+    <SnackbarContent
+      className={clsx(classes[variant], className)}
+      aria-describedby="client-snackbar"
+      message={
+        <span id="client-snackbar" className={classes.message}>
+          <Icon className={clsx(classes.icon, classes.iconVariant)} />
+          {message}
+        </span>
+      }
+      action={[
+        <IconButton key="close" aria-label="Close" color="inherit" onClick={onClose}>
+          <CloseIcon className={classes.icon} />
+        </IconButton>,
+      ]}
+      {...other}
+    />
+  );
+}
+
+MySnackbarContentWrapper.propTypes = {
+  className: PropTypes.string,
+  message: PropTypes.node,
+  onClose: PropTypes.func,
+  variant: PropTypes.oneOf(["success", "warning", "error", "info"]).isRequired,
+};
+
+const useStyles2 = makeStyles(theme => ({
+  margin: {
+    margin: theme.spacing(1),
+  },
+}));
 
 const RecipeReviewCard = props => {
   const classes = useStyles();
@@ -60,15 +137,29 @@ const RecipeReviewCard = props => {
   };
   const pauseAudio = () => {
     setPlaying(Sound.status.PAUSED);
-
   };
 
   function handleExpandClick() {
     setExpanded(!expanded);
   }
 
+  const classesLike = useStyles2();
+  const [open, setOpen] = React.useState(false);
+
+  function handleClick() {
+    setOpen(true);
+  }
+
+  function handleClose(event, reason) {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  }
+
   return (
-    <Container >
+    <Container>
       <Card className={classes.card} id="card">
         <CardHeader
           avatar={
@@ -96,7 +187,6 @@ const RecipeReviewCard = props => {
         </Typography> */}
         {/* </CardContent> */}
         <CardActions disableSpacing>
-
           <IconButton aria-label="Play">
             <PlayIcon onClick={playAudio} />
           </IconButton>
@@ -105,65 +195,36 @@ const RecipeReviewCard = props => {
             <PauseIcon onClick={pauseAudio} />
           </IconButton>
 
-          <IconButton aria-label="Add to favorites">
+          <IconButton
+            aria-label="Add to favorites"
+            variant="outlined"
+            className={classesLike.margin}
+            onClick={handleClick}
+          >
+            <Snackbar
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left"
+              }}
+              open={open}
+              autoHideDuration={6000}
+              onClose={handleClose}
+            >
+              <MySnackbarContentWrapper
+                onClose={handleClose}
+                variant="success"
+                message="Was saved to your library!"
+              />
+            </Snackbar>
             <FavoriteIcon />
           </IconButton>
-
-          {/* <IconButton aria-label="Share">
-            <ShareIcon />
-          </IconButton> */}
-
-          {/* Expandable Icon */}
-
-          {/* <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="Show more"
-        >
-          <ExpandMoreIcon />
-        </IconButton> */}
-
         </CardActions>
 
-        <Sound
-          url={props.songPreview}
-          playStatus={playing}
-        />
+        <Sound url={props.songPreview} playStatus={playing} />
 
-        {/* Expandable Description */}
-
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
-          {/* <CardContent>
-          <Typography paragraph>Method:</Typography>
-          <Typography paragraph>
-            Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10
-            minutes.
-          </Typography>
-          <Typography paragraph>
-            Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high
-            heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly
-            browned, 6 to 8 minutes. Transfer shrimp to a large plate and set aside, leaving chicken
-            and chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes, onion, salt and
-            pepper, and cook, stirring often until thickened and fragrant, about 10 minutes. Add
-            saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
-          </Typography>
-          <Typography paragraph>
-            Add rice and stir very gently to distribute. Top with artichokes and peppers, and cook
-            without stirring, until most of the liquid is absorbed, 15 to 18 minutes. Reduce heat to
-            medium-low, add reserved shrimp and mussels, tucking them down into the rice, and cook
-            again without stirring, until mussels have opened and rice is just tender, 5 to 7
-            minutes more. (Discard any mussels that don’t open.)
-          </Typography>
-          <Typography>
-            Set aside off of the heat to let rest for 10 minutes, and then serve.
-          </Typography>
-        </CardContent> */}
-        </Collapse>
-      </Card >
-    </Container >
+        <Collapse in={expanded} timeout="auto" unmountOnExit />
+      </Card>
+    </Container>
   );
 };
 
