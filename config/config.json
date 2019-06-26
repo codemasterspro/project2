@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "Fafa.1372",
-    "database": "project_2",
+    "password": "",
+    "database": "jamtunes",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
