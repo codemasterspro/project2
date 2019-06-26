@@ -12,13 +12,14 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+// import Modal from "@material-ui/core/Modal";
 
 function MadeWithLove() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Built with love by the "}
       <Link color="inherit" href="https://material-ui.com/">
-                Material-UI
+        Material-UI
       </Link>
       {" team."}
     </Typography>
@@ -61,7 +62,7 @@ export default function SignUp() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-                    Sign up
+          Sign up
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
@@ -111,12 +112,6 @@ export default function SignUp() {
                 autoComplete="current-password"
               />
             </Grid>
-            <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
-              />
-            </Grid>
           </Grid>
           <Button
             type="submit"
@@ -125,7 +120,7 @@ export default function SignUp() {
             color="primary"
             className={classes.submit}
           >
-        Sign Up
+            Sign Up
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
@@ -136,9 +131,6 @@ export default function SignUp() {
           </Grid>
         </form>
       </div>
-      <Box mt={5}>
-        <MadeWithLove />
-      </Box>
     </Container>
   );
 }
