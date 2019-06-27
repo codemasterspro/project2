@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "MySQL2019",
     "database": "jamtunes",
     "host": "127.0.0.1",
     "dialect": "mysql",
