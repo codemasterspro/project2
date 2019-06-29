@@ -19,11 +19,10 @@ class App extends Component {
   };
   
   // Deezer API Call //
-  // Need to capture user's search input here and pass to API paramaters //
 
   componentDidMount() {
     fetch(
-      "https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=Nervo&index=0&limit=10"
+      "https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=Autograf&index=0&limit=10"
     )
       .then(response => response.json())
       .then(responsejson => {
@@ -95,7 +94,5 @@ class App extends Component {
     );
   }
 }
-
-
 
 export default App;

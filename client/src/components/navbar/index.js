@@ -24,6 +24,7 @@ function getModalStyle() {
   };
 }
 
+// Modal Styling
 const useStylesLog = makeStyles(theme => ({
   paper: {
     position: "relative",
@@ -35,6 +36,7 @@ const useStylesLog = makeStyles(theme => ({
   }
 }));
 
+// Navbar Styling
 const useStyles = makeStyles(theme => ({
   grow: {
     flexGrow: 1
