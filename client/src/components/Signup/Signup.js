@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -39,9 +39,22 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function SignUp() {
-  const classes = useStyles();
 
+
+export default function SignUp() {
+  const [useremail, setUseremail] = useState("");
+  const [password, setPassword] = useState("");
+  const classes = useStyles();
+  //console.log(useremail);
+  //console.log(password);
+
+  const handleSubmit = (event) => {
+    //event.preventDefault();
+    alert(useremail);
+  };
+
+
+  
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -52,7 +65,7 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSubmit={handleSubmit}>
           <Grid container spacing={2}>
             {/* <Grid item xs={12} sm={6}>
               <TextField
@@ -86,6 +99,7 @@ export default function SignUp() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                onChange={event => setUseremail(event.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -98,6 +112,7 @@ export default function SignUp() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                onChange={event => setPassword(event.target.value)}
               />
             </Grid>
           </Grid>
